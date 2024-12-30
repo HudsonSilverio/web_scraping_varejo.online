@@ -12,6 +12,12 @@ black = "^24.10.0"
 isort = "^5.13.2"
 taskipy = "^1.14.1"
 mkdocs = "^1.6.1"
+mkdocstrings = "^0.27.0"
+pygments = "^2.18.0"
+mkdocs-material = "^9.5.49"
+pymdown-extensions = "^10.13"
+flake8 = "^7.1.1"
+pre-commit = "^4.0.1"
 
 
 [build-system]
@@ -19,4 +25,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
  [tool.taskipy.tasks]
+kill = "kill -9 $(lsof -t -i :8000)"
 
