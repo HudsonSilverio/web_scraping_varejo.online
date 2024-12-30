@@ -1,6 +1,6 @@
 # poetry run python main.py
 
-# print('ola')
+ print('ola')
 
 import os  # Importação não utilizada (flake8)
 import sys
