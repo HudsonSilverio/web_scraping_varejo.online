@@ -2,10 +2,6 @@
 
 # print('ola')
 
-def testar_funcao(funcao):
-    try:
-        funcao()
-    except Exception as e:
-        print(f"Erro capturado: {type(e).__name__}: {e}")
-
-testar_funcao(funcao_com_erro_tipo) # Irá imprimir: Erro capturado: TypeError: unsupported operand(s) for +: 'int' and 'str'
+def funcao_com_erro_indice():
+    lista = [1, 2, 3]
+    print(lista[3]) # Índice 3 está fora dos limites (índices 0, 1 e 2)
