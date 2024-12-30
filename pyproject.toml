@@ -17,7 +17,6 @@ pygments = "^2.18.0"
 mkdocs-material = "^9.5.49"
 pymdown-extensions = "^10.13"
 flake8 = "^7.1.1"
-pre-commit = "^4.0.1"
 
 
 [build-system]
@@ -26,4 +25,3 @@ build-backend = "poetry.core.masonry.api"
 
  [tool.taskipy.tasks]
 kill = "kill -9 $(lsof -t -i :8000)"
-
