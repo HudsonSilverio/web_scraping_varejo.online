@@ -1,27 +1,24 @@
 name: CI Workflow
 
 
-on: [pull_request]
-
+on: [push, pull_request]
 
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
-
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
 
-      - name: Instalar o Python
+      - name: Set up Python 3.12.5
         uses: actions/setup-python@v2
         with:
           python-version: 3.12.5
 
 
-      - name: Instalar Poetry
+      - name: Install poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
@@ -32,3 +29,4 @@ jobs:
 
       - name: Run pytest
         run: poetry run pytest
+
