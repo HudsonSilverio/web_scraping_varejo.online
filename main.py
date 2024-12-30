@@ -2,7 +2,7 @@
 
 # print('ola')
 
-import os  # Importação não utilizada (flake8)
+import os  # Importação não utilizada (flake8)g
 
 def funcao_com_erro_indice():
     lista = [1, 2, 3]
