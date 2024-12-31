@@ -17,6 +17,7 @@ pygments = "^2.18.0"
 mkdocs-material = "^9.5.49"
 pymdown-extensions = "^10.13"
 flake8 = "^7.1.1"
+requests = "^2.32.3"
 
 
 [build-system]
