@@ -1,6 +1,6 @@
 # # poetry run python extract.py
 # #print('hola')
-
+    
 import requests
 import time 
 from bs4 import BeautifulSoup
@@ -22,12 +22,13 @@ def parse_page(html): # funcao que coleta exatamente a parte que voce deseja do 
     categoria_2: list = soup.find_all('span', class_='a-offscreen')
     preco_antigo = (categoria_2[0].get_text()).replace('R$', '')
     
+    timestamp = time.strftime('%Y-%m-%d %H:%M:%S:') # cod para marcar a hora da coleta
     
     return {
         'nome_produto': nome_produto,
         'preco_atual' : preco_atual,
         'preco_antigo': preco_antigo,
-        
+        'timestamp' : timestamp
     }
     
 
