@@ -17,12 +17,12 @@ def parse_page(html): # funcao que coleta exatamente a parte que voce deseja do 
    
     # codigo que separa as classes para poder pegar elemento especifico dentro de uma lista
     categoria_1: list = soup.find_all('span', class_='a-price-whole')
-    preco_atual = (categoria_1[-2].get_text().replace(',', ''))
-    preco_atual = float(preco_atual)
+    preco_atual = (categoria_1[-2].get_text().replace(',', '').replace(',', '.'))
+    #preco_atual = float(preco_atual)
     
     categoria_2: list = soup.find_all('span', class_='a-offscreen')
-    preco_antigo = (categoria_2[0].get_text()).replace('R$', '')
-    preco_antigo = float(preco_antigo)
+    preco_antigo = (categoria_2[0].get_text()).replace('R$', '').replace(',', '.')
+    #preco_antigo = float(preco_antigo)
     
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S:') # cod para marcar a hora da coleta
     
@@ -40,9 +40,6 @@ if __name__ =='__main__': # Garante que o código abaixo seja executado apenas q
         coleta = parse_page(conteudo_pag)
         print(coleta)
         time.sleep(10)  
-
-
-    
 
 
 

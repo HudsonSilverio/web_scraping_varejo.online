@@ -18,11 +18,17 @@ mkdocs-material = "^9.5.49"
 pymdown-extensions = "^10.13"
 flake8 = "^7.1.1"
 requests = "^2.32.3"
+scrapy = "^2.12.0"
+beautifulsoup4 = "^4.12.3"
+pandas = "^2.2.3"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
- [tool.taskipy.tasks]
+[tool.taskipy.tasks]
 kill = "kill -9 $(lsof -t -i :8000)"
+cod = "poetry run python extract.py"
+cod2 = "poetry run python transform.py"
+cod3 = "poetry run python load.py"
