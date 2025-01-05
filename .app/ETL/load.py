@@ -9,7 +9,8 @@ from extract import parse_page, pag_produto
 def criando_conexao(db_name='tv_sansung_prices.db'):
     """Cria uma conexão com o banco de dados SQLite."""
      # Define o caminho do banco de dados na pasta 'data'
-    conn = sqlite3.connect(db_name)
+    #conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect('./data/tv_sansung_prices.db')
     return conn
 
 def configuracao_df(conn):
