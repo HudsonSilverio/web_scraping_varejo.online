@@ -1,6 +1,4 @@
-# # poetry run python extract.py
-# #print('hola')
-    
+
 import requests
 import time 
 from bs4 import BeautifulSoup
@@ -15,16 +13,6 @@ def parse_page(html): # funcao que coleta exatamente a parte que voce deseja do 
     preco_antigo = soup.find('span', class_='a-offscreen').get_text().replace('R$', ' ')
     nome_produto = soup.find('span',id="productTitle", class_='a-size-large product-title-word-break').get_text().replace(' ', '')
    
-    # # codigo que separa as classes para poder pegar elemento especifico dentro de uma lista
-    # categoria_1: list = soup.find_all('span', class_='a-price-whole')
-    # preco_atual = (categoria_1[-2].get_text().replace(',', '').replace(',', '.'))
-    # #preco_atual = float(preco_atual)
-    
-    # categoria_2: list = soup.find_all('span', class_='a-offscreen')
-    # preco_antigo = (categoria_2[0].get_text()).replace('R$', '').replace(',', '.')
-    #preco_antigo = float(preco_antigo)
-    
-    # Extração dos valores com BeautifulSoup
     categoria_1: list = soup.find_all('span', class_='a-price-whole')
     preco_atual = categoria_1[-2].get_text()  # Coleta o texto diretamente
 
