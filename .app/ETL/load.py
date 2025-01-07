@@ -33,7 +33,7 @@ def save_to_database(conn, data):
     df = pd.DataFrame([data])  # Converte o dicionário em um DataFrame de uma linha
     df.to_sql('prices', conn, if_exists='append', index=False)  # Salva no banco de dados
 
-def maximo_venda(coon): #funcao que conecta com o DB e retorna o preco maximo naquele momento
+def maximo_venda(conn): #funcao que conecta com o DB e retorna o preco maximo naquele momento
     
     cursor = conn.cursor()
     cursor.execute("SELECT MAX(preco_atual), timestamp FROM prices")
