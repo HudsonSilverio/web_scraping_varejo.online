@@ -75,7 +75,7 @@ def configuracao_df(conn):
     """Cria a tabela de preços se ela não existir."""
     cursor = conn.cursor()
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS prices (
+        CREATE TABLE IF NOT EXISTS tv.prices (
             id SERIAL PRIMARY KEY,
             product_name TEXT,
             nome_produto INTEGER,
@@ -87,7 +87,7 @@ def configuracao_df(conn):
     conn.commit()
     cursor.close()
 
-def save_to_database(data, table_name='prices'):
+def save_to_database(data, table_name='tv.prices'):
     """Salva uma linha de dados no banco de dados PostgreSQL usando pandas e SQLAlchemy."""
     df = pd.DataFrame([data])
     # Usa SQLAlchemy para salvar os dados no PostgreSQL
@@ -98,8 +98,9 @@ def get_max_price(conn):
     cursor = conn.cursor()
     cursor.execute("""
         SELECT preco_atual, timestamp 
-        FROM prices 
-        WHERE preco_atual = (SELECT MAX(preco_atual) FROM prices);
+        FROM tv.
+        prices 
+        WHERE preco_atual = (SELECT MAX(preco_atual) FROM tv.prices);
     """)
     result = cursor.fetchone()
     cursor.close()
@@ -150,5 +151,5 @@ async def main():
     finally:
             conn.close()
 
-    # Executa o loop assíncrono
-    asyncio.run(main())
+# Executa o loop assíncrono
+asyncio.run(main())
