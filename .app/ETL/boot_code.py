@@ -1,5 +1,6 @@
 
 import asyncio
+
 from telegram import Bot
 
 TELEGRAM_TOKEN = "8068436836:AAGfDzr3J0ah6BQxrucG-Qt06uV9ANHXn1E"
@@ -11,3 +12,5 @@ async def send_message():
 
 # Executa a função assíncrona
 asyncio.run(send_message())
+
+

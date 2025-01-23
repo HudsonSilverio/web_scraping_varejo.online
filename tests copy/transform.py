@@ -1,7 +1,9 @@
 #"poetry run python transform.py"
 
-from bs4 import BeautifulSoup
 import time
+
+from bs4 import BeautifulSoup
+
 
 def parse_page(html): # funcao que coleta exatamente a parte que voce deseja do HTML
     soup = BeautifulSoup(html, 'html.parser')

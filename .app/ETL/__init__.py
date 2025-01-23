@@ -1,6 +1,7 @@
 """This module contains functions for the ETL process."""
 
-from .extract import parse_page, pag_produto
-from .load import criando_conexao, configuracao_df,save_to_database, maximo_venda
-from .transform import dataframe
+from .extract import pag_produto, parse_page
+from .load import (configuracao_df, criando_conexao, maximo_venda,
+                   save_to_database)
 from .pipeline import pipeline_completa
+from .transform import dataframe
