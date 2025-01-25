@@ -17,11 +17,27 @@ pygments = "^2.18.0"
 mkdocs-material = "^9.5.49"
 pymdown-extensions = "^10.13"
 flake8 = "^7.1.1"
+requests = "^2.32.3"
+scrapy = "^2.12.0"
+beautifulsoup4 = "^4.12.3"
+pandas = "^2.2.3"
+sqlalchemy = "^2.0.36"
+psycopg2-binary = "^2.9.10"
+pedantic = "^2.1.8"
+pydantic = "^2.10.5"
+h11 = "^0.14.0"
+httpcore = {extras = ["asyncio"], version = "^1.0.7"}
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
- [tool.taskipy.tasks]
+[tool.taskipy.tasks]
 kill = "kill -9 $(lsof -t -i :8000)"
+e = "poetry run python extract.py"
+t = "poetry run python transform.py"
+l = "poetry run python load.py"
+m = "poetry run python main.py"
+p = "poetry run python pipeline.py"
+b = "poetry run python boot_code.py"
